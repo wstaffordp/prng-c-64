@@ -26,9 +26,9 @@ Incrementing `b` by `2` outside of `flurryburst8` whenever `a` is `0` behaves as
 
 It passes `stdin8` PractRand tests up to 4KB.
 
-RXS M XS variants of PCG8 pass `stdin8` PractRand tests up to a range of 1KB to 2KB. Furthermore, they generate predictable output with 1 cycle that has 1 of each number from a range of 2⁸ numbers.
+RXS M XS variants of PCG8 pass `stdin8` PractRand tests up to a range of 1KB to 2KB.
 
-Xorshift8 passes `stdin8` PractRand tests up to 1KB. Furthermore, it doesn't generate `0` and generates predictable output with 1 cycle that has 1 of each number from a range of (2⁸ - 1) numbers.
+Xorshift8 passes `stdin8` PractRand tests up to 1KB.
 
 In conclusion, FlurryBurst8 provides enhanced distribution, period, security, speed and statistical test results as an ideal alternative to RXS M XS variants of PCG8 and Xorshift8.
 
