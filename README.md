@@ -12,70 +12,116 @@ FlurryBurst is a medium-period, statistically-strong PRNG that outperforms PCG8,
 
 #### FlurryBurst64Low32
 
-`Next` generates and returns a pseudorandom `uint` integer.
+FlurryBurst64Low32 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M, XSH RR, XSH RS and XSL RR variants of PCG32.
 
-FlurryBurst64Low32 has a period of at least 2⁶⁴ by seeding `a` with a `ulong` integer and seeding the remaining state with `0`.
+It has a period of at least 2⁶⁴.
 
-Up to 2⁶⁴ parallel instances each have a non-overlapping period of at least 2⁶⁴ by seeding `a` with non-overlapping `ulong` integers, seeding `b` with `0` and seeding `c` with `a + 1`. The first several results from each parallel instance should be skipped.
+Seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1` behaves as a jump function with up to 2⁶⁴ parallel instances that each have a non-overlapping period of at least 2⁶⁴. The first several results from each parallel instance should be skipped.
 
-In conclusion, FlurryBurst64Low32 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M, XSH RR, XSH RS and XSL RR variants of PCG32.
+In non-parallel instances, `a` must be assigned a seed and the remaining state must be seeded with `0`.
+
+##### C
+
+`flurryburst64low32` generates and returns a pseudorandom `uint32_t` integer, provided the implementation supports a 32-bit, unsigned integral type for `uint32_t` and a 64-bit, unsigned integral type for `uint64_t`.
+
+##### C#
+
+`Next` from `FlurryBurst64Low32` generates and returns a pseudorandom `uint` integer.
 
 ---
 
 #### FlurryBurst32
 
-`Next` generates and returns a pseudorandom `uint` integer.
+FlurryBurst32 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M XS variants of PCG32 and Xorshift32.
 
-FlurryBurst32 has a period of at least 2³⁶ by seeding `a` with a `uint` integer and seeding the remaining state with `0`.
+It has a period of at least 2³⁶.
 
-Up to 2³² parallel instances each have a non-overlapping period of at least 2³² by seeding `a` with non-overlapping `uint` integers, seeding `b` with `0` and seeding `c` with `a + 1`. The first several results from each parallel instance should be skipped.
+Seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1` behaves as a jump function with up to 2³² parallel instances that each have a non-overlapping period of at least 2³². The first several results from each parallel instance should be skipped.
 
-In conclusion, FlurryBurst32 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M XS variants of PCG32 and Xorshift32.
+In non-parallel instances, `a` must be assigned a seed and the remaining state must be seeded with `0`.
+
+##### C
+
+`flurryburst32` generates and returns a pseudorandom `uint32_t` integer, provided the implementation supports a 32-bit, unsigned integral type for `uint32_t`.
+
+##### C#
+
+`Next` from `FlurryBurst32` generates and returns a pseudorandom `uint` integer.
 
 ---
 
 #### FlurryBurst32Low16
 
-`Next` generates and returns a pseudorandom `ushort` integer.
+FlurryBurst32Low16 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M, XSH RR and XSH RS variants of PCG16.
 
-FlurryBurst32Low16 has a period of at least 2³² by seeding `a` with a `uint` integer and seeding the remaining state with `0`.
+It has a period of at least 2³².
 
-Up to 2³² parallel instances each have a non-overlapping period of at least 2³² by seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1`. The first several results from each parallel instance should be skipped.
+Seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1` behaves as a jump function with up to 2³² parallel instances that each have a non-overlapping period of at least 2³². The first several results from each parallel instance should be skipped.
 
-In conclusion, FlurryBurst32Low16 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M, XSH RR and XSH RS variants of PCG16.
+In non-parallel instances, `a` must be assigned a seed and the remaining state must be seeded with `0`.
+
+##### C
+
+`flurryburst32low16` generates and returns a pseudorandom `uint16_t` integer, provided the implementation supports a 16-bit, unsigned integral type for `uint16_t` and a 32-bit, unsigned integral type for `uint32_t`.
+
+##### C#
+
+`Next` from `FlurryBurst32Low16` generates and returns a pseudorandom `ushort` integer.
 
 ---
 
 #### FlurryBurst16
 
-`Next` generates and returns a pseudorandom `ushort` integer.
+FlurryBurst16 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M XS variants of PCG16 and Xorshift16 "798".
 
-FlurryBurst16 has a period of at least 2²⁰ by seeding `a` with a `ushort` integer and seeding the remaining state with `0`.
+It has a period of at least 2²⁰.
 
-Up to 2¹⁶ parallel instances each have a non-overlapping period of at least 2¹⁶ by seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1`. The first several results from each parallel instance should be skipped.
+Seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1` behaves as a jump function with up to 2¹⁶ parallel instances that each have a non-overlapping period of at least 2¹⁶. The first several results from each parallel instance should be skipped.
 
-In conclusion, FlurryBurst16 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M XS variants of PCG16 and Xorshift16 "798".
+In non-parallel instances, `a` must be assigned a seed and the remaining state must be seeded with `0`.
+
+##### C
+
+`flurryburst16` generates and returns a pseudorandom `uint16_t` integer, provided the implementation supports a 16-bit, unsigned integral type for `uint16_t`.
+
+##### C#
+
+`Next` from `FlurryBurst16` generates and returns a pseudorandom `ushort` integer.
 
 ---
 
 #### FlurryBurst16Low8
 
-`Next` generates and returns a pseudorandom `byte` integer.
+FlurryBurst16Low8 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M, XSH RR and XSH RS variants of PCG8 and Xorshift16 "798" truncated to 8 low bits.
 
-FlurryBurst16Low8 has a period of at least 2¹⁶ by seeding `a` with a `ushort` integer and seeding the remaining state with `0`.
+It has a period of at least 2¹⁶.
 
-Up to 2¹⁶ parallel instances each have a non-overlapping period of at least 2¹⁶ by seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1`. The first several results from each parallel instance should be skipped.
+Seeding `a` with non-overlapping integers, seeding `b` with `0` and seeding `c` with `a + 1` behaves as a jump function with up to 2¹⁶ parallel instances that each have a non-overlapping period of at least 2¹⁶. The first several results from each parallel instance should be skipped.
 
-In conclusion, FlurryBurst16Low8 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M, XSH RR and XSH RS variants of PCG8 and Xorshift16 "798" truncated to 8 low bits.
+In non-parallel instances, `a` must be assigned a seed and the remaining state must be seeded with `0`.
+
+##### C
+
+`flurryburst16low8` generates and returns a pseudorandom `uint8_t` integer, provided the implementation supports an 8-bit, unsigned integral type for `uint8_t` and a 16-bit, unsigned integral type for `uint16_t`.
+
+##### C#
+
+`Next` from `FlurryBurst16Low8` generates and returns a pseudorandom `byte` integer.
 
 ---
 
 #### FlurryBurst8
 
-`Next` generates and returns a pseudorandom `byte` integer.
+FlurryBurst8 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M XS variants of PCG8 and Xorshift8 "315".
 
-FlurryBurst8 has a period of between 2¹⁴ and 2¹⁵, precisely 18688, by seeding `a` with `0` and seeding `b` with a `byte` integer.
+It has a period of between 2¹⁴ and 2¹⁵, precisely 18688.
 
-Incrementing `b` by `2` whenever `a` is `0` behaves as a jump function. Generating 73 subsequent integers after either jumping or seeding the state resets `a` to `0`. 256 repetitions of both generating 73 subsequent integers and jumping generates the same frequency of integers as a full cycle that generates 18688 integers without jumping.
+`a` must be seeded with `0` and `b` must be assigned a seed. Incrementing `b` by `2` whenever `a` is `0` behaves as a jump function. Generating 73 subsequent integers after either jumping or seeding the state resets `a` to `0`. 256 repetitions of both generating 73 subsequent integers and jumping generates the same frequency of integers as a full cycle that generates 18688 integers without jumping.
 
-In conclusion, FlurryBurst8 provides enhanced parallelism, period, speed and statistical test results as an ideal alternative to RXS M XS variants of PCG8 and Xorshift8 "315".
+##### C
+
+`flurryburst8` generates and returns a pseudorandom `uint8_t` integer, provided the implementation supports an 8-bit, unsigned integral type for `uint8_t`.
+
+##### C#
+
+`Next` from `FlurryBurst8` generates and returns a pseudorandom `byte` integer.
